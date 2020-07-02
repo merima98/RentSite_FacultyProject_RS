@@ -1,0 +1,33 @@
+version: '3'
+services:
+#mssql docker
+  rentsite-sql:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    restart: unless-stopped
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=QWElkj132!
+      - MSSQL_PID=Developer
+    ports:
+      - 1401:1433
+    networks:
+      - rentsitenet
+
+  rentsite-api:
+    restart: unless-stopped
+    build:
+      context: .
+    environment:
+      - ConnectionStrings:RentSite=Server=rentsite-sql,1433;Database=RentSiteDocker;User=sa;Password=QWElkj132!;ConnectRetryCount=0
+    ports:
+      - 5000:80
+    networks:
+      - rentsitenet      
+    links:
+      - rentsite-sql
+    depends_on:
+      - rentsite-sql
+      
+networks:
+  rentsitenet:
+    driver: bridge   

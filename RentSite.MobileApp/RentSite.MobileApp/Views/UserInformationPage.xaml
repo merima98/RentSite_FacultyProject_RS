@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:RentSite.MobileApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="RentSite.MobileApp.Views.UserInformationPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:UserInformationsViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.BackgroundColor>
+        <Color>OldLace</Color>
+    </ContentPage.BackgroundColor>
+
+    <NavigationPage.TitleView >
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Rent Site"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="20" TextColor="White" />
+            <Button Text="Logout"  Clicked="Logout_Clicked" TextColor="White"  Command="{Binding LogoutCommand}"></Button>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    
+    <ContentPage.Content>
+        <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="50">
+            <Label  Text="User info"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="25"
+                d:Text="{Binding .}"
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}" />
+
+            <Label Text="First name:"  FontSize="20"  d:Text="{Binding .}"
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}"/>
+            
+            <Label Text="{Binding FirstName}" 
+            FontSize="20" />
+
+            <Label Text="Last name: "
+            FontSize="20"  d:Text="{Binding .}"
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}"/>
+
+            <Label Text="{Binding LastName}"
+            FontSize="20"/>
+
+            <Label Text="Phone number: "
+            FontSize="20"  d:Text="{Binding .}"
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}"/>
+
+            <Label Text="{Binding PhoneNumber}"
+            FontSize="20"/>
+
+            <Label Text="Email:   "
+            FontSize="20"  d:Text="{Binding .}"
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}"/>
+
+            <Label Text="{Binding Email}"
+            FontSize="20"/>
+
+            <Label Text="Username: "
+            FontSize="20"  d:Text="{Binding .}"
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}"/>
+
+            <Label Text="{Binding Username}"
+            FontSize="20"/>
+
+            <Label Text="Your status: "
+            FontSize="20"  d:Text="{Binding .}"
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}"/>
+
+            <Label Text="{Binding isActive}"
+            FontSize="20"/>
+
+            <Label Text="Your type of user: "
+            FontSize="20"  d:Text="{Binding .}"
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}"/>
+
+            <Label Text="{Binding TypeOfUser}"
+            FontSize="20"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

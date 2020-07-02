@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:RentSite.MobileApp.Converters"
+             mc:Ignorable="d"
+             x:Class="RentSite.MobileApp.Views.ApartmentsStopRentingPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <NavigationPage.TitleView >
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Stop renting?"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="20" TextColor="White" />
+            <Button Text="Back"  BackgroundColor="Accent"  Pressed="OnBackButtonPressed"></Button>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.BackgroundColor>
+        <Color>OldLace</Color>
+    </ContentPage.BackgroundColor>
+
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="5" >
+            <Label Text="Your rented apartment"
+                   TextColor="DarkRed"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="25"
+                d:Text="{Binding .}"
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}" />
+            <Label Text="{Binding Apartment.Description}" Padding="10, 0,0,0"
+                           LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="16" />
+
+            <Label Text="Address" Padding="10, 0,0,0"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="17" />
+            <Label Text="{Binding Apartment.Address}" Padding="10, 0,0,0"
+                                FontFamily="Calisto MT"
+                                FontSize="16" />
+
+            <Label Text="Price in KM"  Padding="10, 0,0,0"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="17" />
+            <Label Text="{Binding Apartment.Price}" Padding="10, 0,0,0"
+                             FontFamily="Calisto MT" 
+                                FontSize="16" />
+
+            <Label Text="Floor"  Padding="10, 0,0,0"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="17" />
+            <Label Text="{Binding Apartment.Floor}" Padding="10, 0,0,0"
+                               FontFamily="Calisto MT"
+                                FontSize="16" />
+
+            <Label Text="Type of heating"  Padding="10, 0,0,0"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="17" />
+            <Label Text="{Binding Apartment.TypeOfHeating}" Padding="10, 0,0,0"
+                                FontFamily="Calisto MT"
+                                FontSize="16" />
+
+            <Label Text="Date of renewal"  Padding="10, 0,0,0"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="17" />
+            <Label Text="{Binding Apartment.DateOfRenewal}" Padding="10, 0,0,0"
+                              FontFamily="Calisto MT"
+                                FontSize="16" />
+
+
+            <Label Text="Date of publication"  Padding="10, 0,0,0"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="17" />
+            <Label Text="{Binding Apartment.DateOfPublication}" Padding="10, 0,0,0"
+                               FontFamily="Calisto MT"
+                                FontSize="16" />
+
+
+            <Image Source="{Binding Apartment.Picture, Converter={StaticResource imgConv}}"></Image>
+
+
+            <Label Text="Enter mark of your review below: " TextColor="DarkRed" Padding="10,5,0,10"
+                   FontFamily="Calisto MT"
+                            FontSize="17" />
+            <Entry   Text="{Binding Mark}"   Placeholder="1 - 5"  Keyboard="Numeric"></Entry>
+            <Button Text="Add mark for this apartment?" Padding="10,5,0,10"  Command="{Binding AddMarkCommand}"  ></Button>
+
+             <Button Command="{Binding RentCommand}" Pressed="ButtonPressed" TextColor="Black" Text="Stop renting" BackgroundColor="OldLace"  ></Button>
+
+        </StackLayout>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>

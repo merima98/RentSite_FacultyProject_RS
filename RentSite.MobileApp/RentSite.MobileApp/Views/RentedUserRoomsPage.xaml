@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:RentSite.MobileApp.Converters"
+             xmlns:viewModels="clr-namespace:RentSite.MobileApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="RentSite.MobileApp.Views.RentedUserRoomsPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BackgroundColor>
+        <Color>OldLace</Color>
+    </ContentPage.BackgroundColor>
+
+
+    <ContentPage.BindingContext>
+        <viewModels:RentedUserRoomsViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Rented rooms"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+
+            <ListView ItemsSource="{Binding RentedRoomsList}" ItemSelected="ListView_OnItemSelected"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Description}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+
+                                <Label Text="Address" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding Address}" 
+                                FontSize="15" />
+
+                                <Label Text="Area" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding Area}" 
+                                FontSize="15" />
+
+                                <Label Text="Price in KM" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding Price}" 
+                                FontSize="15" />
+
+
+                                <Label Text="Type of heating" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding TypeOfHeating}" 
+                                FontSize="15" />
+
+                                <Label Text="Date of renewal" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding DateOfRenewal}" 
+                                FontSize="15" />
+
+                                <Label Text="Date of publication" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding DateOfPublication}" 
+                                FontSize="15" />
+
+                                <Image Source="{Binding Picture, Converter={StaticResource imgConv}}"></Image>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

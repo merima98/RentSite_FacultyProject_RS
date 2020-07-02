@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:RentSite.MobileApp.ViewModels"
+             xmlns:converters="clr-namespace:RentSite.MobileApp.Converters"
+             mc:Ignorable="d"
+             x:Class="RentSite.MobileApp.Views.ApartmentsFirstPage">
+    <ContentPage.BindingContext>
+        <viewModels:ApartmentsFirstViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BackgroundColor>
+        <Color>OldLace</Color>
+    </ContentPage.BackgroundColor>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Rent Site"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="25"
+                d:Text="{Binding .}"
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}" />
+
+
+            <ListView ItemsSource="{Binding ApartmentsList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Description}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                <Label Text="{Binding Address}" 
+                                d:Text="Item descripton"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="15" />
+                                <Image Source="{Binding Picture, Converter={StaticResource imgConv}}"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

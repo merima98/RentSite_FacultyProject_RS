@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:RentSite.MobileApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="RentSite.MobileApp.Views.LoginPage">
+    <ContentPage.BindingContext>
+        <viewModels:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.BackgroundColor>
+        <Color>OldLace</Color>
+    </ContentPage.BackgroundColor>
+    <ContentPage.Content>
+        <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="5" >
+            <Label TextColor="Black" Text="Username: "/>
+            <Entry Text="{Binding Username}"></Entry>
+            <Label TextColor="Black"  Text="Password: "/>
+            <Entry IsPassword="True" Text="{Binding Password}"></Entry>
+            <Button Command="{Binding LoginCommand}" TextColor="Black" Text="Login" BackgroundColor="OldLace"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

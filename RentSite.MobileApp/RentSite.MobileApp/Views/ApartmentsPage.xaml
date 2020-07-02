@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:RentSite.MobileApp.ViewModels"
+             xmlns:converters="clr-namespace:RentSite.MobileApp.Converters"
+             mc:Ignorable="d"
+             x:Class="RentSite.MobileApp.Views.ApartmentsPage">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Apartments"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="20" TextColor="White" />
+            <Button Text="Back" Pressed="OnBackButtonPressed"></Button>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.BindingContext>
+        <viewModels:ApartmentsViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BackgroundColor>
+        <Color>OldLace</Color>
+    </ContentPage.BackgroundColor>
+
+    <ContentPage.Content>
+       
+        <StackLayout>
+            <Label Text="Avaliable apartments at Rent Site"
+            VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="25"
+                d:Text="{Binding .}"
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}" />
+
+
+            <Picker SelectedItem="{Binding SelectedTypeOfCity}" Title="City" ItemsSource="{Binding TypeOfCity}" ItemDisplayBinding="{Binding Name}"></Picker>
+            <Picker SelectedItem="{Binding SelectedTypeOfApartments}" Title="Type of apartment" ItemsSource="{Binding TypeOfApartments}" ItemDisplayBinding="{Binding Name}"></Picker>
+
+            <ListView ItemsSource="{Binding ApartmentsList}"  ItemSelected="ListView_OnItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Description}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+
+
+                                <Label Text="Address" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding Address}" 
+                                FontSize="15" />
+
+                                <Label Text="Area" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding Area}" 
+                                FontSize="15" />
+
+                                <Label Text="Price in KM" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding Price}" 
+                                FontSize="15" />
+
+                             
+                                <Label Text="Floor" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding Floor}" 
+                                FontSize="15" />
+
+
+                                <Label Text="Type of heating" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding TypeOfHeating}" 
+                                FontSize="15" />
+
+                                <Label Text="Date of renewal" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding DateOfRenewal}" 
+                                FontSize="15" />
+
+                                <Label Text="Date of publication" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="15" />
+                                <Label Text="{Binding DateOfPublication}" 
+                                FontSize="15" />
+
+
+                                <Image Source="{Binding Picture, Converter={StaticResource imgConv}}"></Image>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+
+
+
