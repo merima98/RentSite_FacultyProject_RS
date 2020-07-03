@@ -52,6 +52,7 @@ namespace RentSite.WinUI.Users
                     await _userService.Insert<User>(request);
                 }
                 MessageBox.Show("Operation successfully performed!");
+                this.Close();
             }
 
         }
