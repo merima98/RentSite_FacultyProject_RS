@@ -41,18 +41,26 @@ namespace RentSite.WinUI.Rooms
 
                 if (int.TryParse(tytFilterByYear.Text, out int year))
                 {
-                    YearSearchRequest searchRequest = new YearSearchRequest()
+                    if (year > 0)
                     {
-                        Year = year
-                    };
-                    var list = await _roomsRentedService.Get<List<Model.RoomsReport>>(searchRequest);
-                    int? totalForSelectedYears = 0;
-                    foreach (var x in list)
-                    {
-                        totalForSelectedYears += int.Parse(x.TotalPrice.ToString());
+                        YearSearchRequest searchRequest = new YearSearchRequest()
+                        {
+                            Year = year
+                        };
+                        var list = await _roomsRentedService.Get<List<Model.RoomsReport>>(searchRequest);
+                        int? totalForSelectedYears = 0;
+                        foreach (var x in list)
+                        {
+                            totalForSelectedYears += int.Parse(x.TotalPrice.ToString());
+                        }
+                        txtSelected.Text = totalForSelectedYears.ToString();
+                        dgvRoomsReport.DataSource = list;
+                        errorProvider1.SetError(tytFilterByYear, null);
                     }
-                    txtSelected.Text = totalForSelectedYears.ToString();
-                    dgvRoomsReport.DataSource = list;
+                    else
+                    {
+                        errorProvider1.SetError(tytFilterByYear, "Year must be greater than 0!");
+                    }
 
                 }
                 else

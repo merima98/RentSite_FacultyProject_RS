@@ -56,10 +56,12 @@
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnPrintPreview = new System.Windows.Forms.Button();
             this.panelPrinting1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApartmentsReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panelPrinting1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -330,6 +332,10 @@
             this.panelPrinting1.Size = new System.Drawing.Size(1091, 549);
             this.panelPrinting1.TabIndex = 14;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmApartmentsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,6 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panelPrinting1.ResumeLayout(false);
             this.panelPrinting1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,5 +384,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Button btnPrintPreview;
         private System.Windows.Forms.Panel panelPrinting1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

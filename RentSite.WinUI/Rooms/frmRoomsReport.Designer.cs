@@ -56,10 +56,12 @@
             this.Rented = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelPrinting1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomsReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panelPrinting1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -330,6 +332,10 @@
             this.panelPrinting1.Size = new System.Drawing.Size(1054, 526);
             this.panelPrinting1.TabIndex = 24;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmRoomsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,6 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panelPrinting1.ResumeLayout(false);
             this.panelPrinting1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,5 +384,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Rented;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Panel panelPrinting1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
