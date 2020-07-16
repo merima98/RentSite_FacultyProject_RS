@@ -19,5 +19,10 @@ namespace RentSite.Model
         public byte[] Picture { get; set; }
         public bool? Rented { get; set; }
 
+        //ovo dodajem za potrebe ispita:
+        public decimal? Price { get; set; }
+        public double TotalPrice { get; set; }
+        public double? BrojDana { get; set; }
+
     }
 }

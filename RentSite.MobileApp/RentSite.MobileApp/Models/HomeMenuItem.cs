@@ -11,7 +11,8 @@ namespace RentSite.MobileApp.Models
         Rooms,
         Apartments,
         RentedRooms, 
-        RentedApartments
+        RentedApartments,
+        Ispit
     }
     public class HomeMenuItem
     {

@@ -51,6 +51,9 @@ namespace RentSite.MobileApp.Views
                     case (int)MenuItemType.RentedApartments:
                         MenuPages.Add(id, new NavigationPage(new RentedUserApartmentPage()));
                         break;
+                    case (int)MenuItemType.Ispit:
+                        MenuPages.Add(id, new NavigationPage(new Ispit_SlobodneSobe_OD_DO_Page()));
+                        break;
                 }
             }
 

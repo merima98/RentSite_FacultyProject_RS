@@ -100,6 +100,13 @@ namespace RentSite.WebAPI
             //rooms
             services.AddScoped<IService<Model.RoomsReport, YearSearchRequest>, RoomsReportService>();
             services.AddScoped<IService<Model.RoomsNoFilterReport, object>, RoomsNoFilterReportService>();
+
+            //ispit: 
+            services.AddScoped<IService<Model.Room, Ispit_SlobodneSobe_OD_DO_Request>, Ispit_SlobodneSobe_OD_DO_Service>();
+            services.AddScoped<IService<Model.RentedRooms, Ispit_RentaniSobeKorisnici_OD_DO_Request>, Ispit_RentaniSobeKorisnici_OD_DO_Service>();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
