@@ -4,10 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:converters="clr-namespace:RentSite.MobileApp.Converters" xmlns:viewModels="clr-namespace:RentSite.MobileApp.ViewModels"
              mc:Ignorable="d"
-             x:Class="RentSite.MobileApp.Views.Ispit_SlobodneSobe_OD_DO_Page">
+             x:Class="RentSite.MobileApp.Views.Exam_FreeRooms_FROM_TO_Page">
 
     <ContentPage.BindingContext>
-        <viewModels:Ispit_SlobodneSobe_OD_DO_ViewModel/>
+        <viewModels:ExamFreeRooms_ViewModel/>
     </ContentPage.BindingContext>
 
     <ContentPage.Resources>
@@ -39,9 +39,7 @@
             <Label Text="To: "></Label>
             <DatePicker   MinimumDate="2018-01-01" MaximumDate="2025-12-31" Date="{Binding SelectedDateTo}"  >
             </DatePicker>
-            <Button Text="Trazi apartmane " Command="{Binding TraziCommand}"      ></Button>
-            <Button Text="Trazi apartmane " Command="{Binding TraziCommand}"      ></Button>
-
+            <Button Text="Trazi apartmane " Command="{Binding TraziCommand}"></Button>
             
             <ListView ItemsSource="{Binding RoomsList}" ItemSelected="ListView_ItemSelected"    >
                 <ListView.ItemTemplate>

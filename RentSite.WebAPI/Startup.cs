@@ -101,9 +101,9 @@ namespace RentSite.WebAPI
             services.AddScoped<IService<Model.RoomsReport, YearSearchRequest>, RoomsReportService>();
             services.AddScoped<IService<Model.RoomsNoFilterReport, object>, RoomsNoFilterReportService>();
 
-            //ispit: 
-            services.AddScoped<IService<Model.Room, Ispit_SlobodneSobe_OD_DO_Request>, Ispit_SlobodneSobe_OD_DO_Service>();
-            services.AddScoped<IService<Model.RentedRooms, Ispit_RentaniSobeKorisnici_OD_DO_Request>, Ispit_RentaniSobeKorisnici_OD_DO_Service>();
+            //exam: 
+            services.AddScoped<IService<Model.Room, Exam_FreeRooms_FROM_TO>, Exam_FreeRoomsService>();
+            services.AddScoped<IService<Model.RentedRooms, Exam_RentedRoomsUsers_FROM_TO>, Exam_RentedRoomsUsers_Service>();
 
 
 

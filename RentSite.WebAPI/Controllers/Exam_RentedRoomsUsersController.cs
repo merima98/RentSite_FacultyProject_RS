@@ -6,13 +6,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RentSite.Model;
 using RentSite.Model.Requests;
+using RentSite.WebAPI.Services;
 
 namespace RentSite.WebAPI.Controllers
 {
 
-    public class Ispit_SlobodneSobe_OD_DOController : BaseController<Model.Room, Ispit_SlobodneSobe_OD_DO_Request>
+    public class Exam_RentedRoomsUsersController : BaseController<Model.RentedRooms, Exam_RentedRoomsUsers_FROM_TO>
     {
-        public Ispit_SlobodneSobe_OD_DOController(Services.IService<Room, Ispit_SlobodneSobe_OD_DO_Request> service) : base(service)
+        public Exam_RentedRoomsUsersController(IService<RentedRooms, Exam_RentedRoomsUsers_FROM_TO> service) : base(service)
         {
         }
     }

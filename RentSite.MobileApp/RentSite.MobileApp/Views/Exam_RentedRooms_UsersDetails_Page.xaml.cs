@@ -12,13 +12,13 @@ using Xamarin.Forms.Xaml;
 namespace RentSite.MobileApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Ispit_RentaniSobeKorisnici_OD_DO_DETALJI_Page : ContentPage
+    public partial class Exam_RentedRooms_UsersDetails_Page : ContentPage
     {
-        private Ispit_RentaniSobeKorisnici_OD_DO_DETALJI_ViewModel model = null;
-        public Ispit_RentaniSobeKorisnici_OD_DO_DETALJI_Page(Room room)
+        private Exam_RentedRoomsUsers_DetailsViewModel model = null;
+        public Exam_RentedRooms_UsersDetails_Page(Room room)
         {
             InitializeComponent();
-            BindingContext = model = new Ispit_RentaniSobeKorisnici_OD_DO_DETALJI_ViewModel()
+            BindingContext = model = new Exam_RentedRoomsUsers_DetailsViewModel()
             {
                 Room = room
             };

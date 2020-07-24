@@ -12,7 +12,7 @@ namespace RentSite.MobileApp.Models
         Apartments,
         RentedRooms, 
         RentedApartments,
-        Ispit
+        ExamTask
     }
     public class HomeMenuItem
     {

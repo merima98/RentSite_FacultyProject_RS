@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace RentSite.WebAPI.Services
 {
-    public class Ispit_RentaniSobeKorisnici_OD_DO_Service : BaseService<Model.RentedRooms, Ispit_RentaniSobeKorisnici_OD_DO_Request, Database.RentedRooms>
+    public class Exam_RentedRoomsUsers_Service : BaseService<Model.RentedRooms, Exam_RentedRoomsUsers_FROM_TO, Database.RentedRooms>
     {
-        public Ispit_RentaniSobeKorisnici_OD_DO_Service(RentSiteContext rentSiteContext, IMapper mapper) : base(rentSiteContext, mapper)
+        public Exam_RentedRoomsUsers_Service(RentSiteContext rentSiteContext, IMapper mapper) : base(rentSiteContext, mapper)
         {
         }
-        public override List<Model.RentedRooms> GetAll(Ispit_RentaniSobeKorisnici_OD_DO_Request search)
+        public override List<Model.RentedRooms> GetAll(Exam_RentedRoomsUsers_FROM_TO search)
         {
             var userList = _rentSiteContext.User.ToList();
             var sobeList = _rentSiteContext.Room.ToList();
@@ -46,9 +46,9 @@ namespace RentSite.WebAPI.Services
                                 DateTime end = Convert.ToDateTime(endrentalDate);
 
                                 double numberOfDays = (end - begin).TotalDays;
-                                if (numberOfDays == 0 || numberOfDays > 0 && numberOfDays < 1) //npr ako je 0.45
+                                if (numberOfDays == 0 || numberOfDays > 0 && numberOfDays < 1) 
                                 {
-                                    numberOfDays = 1; //ako je npr isti datum rentanja i odrentanja
+                                    numberOfDays = 1; 
                                 }
                                 numberOfDays = Math.Round(numberOfDays, 0);
 
@@ -74,7 +74,7 @@ namespace RentSite.WebAPI.Services
                     }
                 }
             }
-            //ovo nam je povratni tip
+            
             return output;
         }
 

@@ -12,42 +12,29 @@ using Xamarin.Forms;
 namespace RentSite.MobileApp.ViewModels
 {
    
-    public class Ispit_RentaniSobeKorisnici_OD_DO_DETALJI_ViewModel : BaseViewModel
+    public class Exam_RentedRoomsUsers_DetailsViewModel : BaseViewModel
     {
-        //private readonly APIService _rentRoomService = new APIService("RoomUserRent");
-        //private readonly APIService _roomService = new APIService("SimilarRoomsUser");
-        //private readonly APIService _roomsService = new APIService("Room");
 
-
-        //ispit: 
+        //exam: 
         public ObservableCollection<Model.RentedRooms> RoomsList { get; set; } = new ObservableCollection<Model.RentedRooms>();
-        private readonly APIService _roomsService = new APIService("Ispit_RentaniSobeKorisnici_OD_DO_");
+        private readonly APIService _roomsService = new APIService("Exam_RentedRoomsUsers");
 
-
-
-
-        public Ispit_RentaniSobeKorisnici_OD_DO_DETALJI_ViewModel()
+        public Exam_RentedRoomsUsers_DetailsViewModel()
         {
             InitCommand = new Command(async () => await Init());
         }
 
-
-
-
-
-        public ICommand KalkulacijaCommand { get; set; }
         public Room Room { get; set; }
         public ICommand RentCommand { get; set; }
 
 
-     //   public ObservableCollection<Model.Room> RoomsList { get; set; } = new ObservableCollection<Model.Room>();
 
         public ICommand InitCommand { get; set; }
 
-        public async Task Init()   //potrebno je i ovo promijeniti
+        public async Task Init()   
         {
             
-            Ispit_RentaniSobeKorisnici_OD_DO_Request request = new Ispit_RentaniSobeKorisnici_OD_DO_Request();
+            Exam_RentedRoomsUsers_FROM_TO request = new Exam_RentedRoomsUsers_FROM_TO();
             request.RoomId = Room.Id;
             var listRoom = await _roomsService.Get<IEnumerable<Model.RentedRooms>>(request);
             RoomsList.Clear();

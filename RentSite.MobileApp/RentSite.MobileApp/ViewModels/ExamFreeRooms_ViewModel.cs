@@ -11,14 +11,14 @@ namespace RentSite.MobileApp.ViewModels
 {
   
 
-    public class Ispit_SlobodneSobe_OD_DO_ViewModel : BaseViewModel
+    public class ExamFreeRooms_ViewModel : BaseViewModel
     {
-        private readonly APIService _roomsService = new APIService("Ispit_SlobodneSobe_OD_DO");
+        private readonly APIService _roomsService = new APIService("Exam_FreeRooms_FROM_TO");
 
 
 
 
-        public Ispit_SlobodneSobe_OD_DO_ViewModel()
+        public ExamFreeRooms_ViewModel()
         {
             TraziCommand = new Command(async () => await Trazi());
         }
@@ -53,7 +53,7 @@ namespace RentSite.MobileApp.ViewModels
         {
             if (SelectedDateFrom.Date >= DateTime.Now && SelectedDateTo.Date >= DateTime.Now && SelectedDateTo.Date >= SelectedDateFrom.Date)
             {
-                Ispit_SlobodneSobe_OD_DO_Request searchRequest = new Ispit_SlobodneSobe_OD_DO_Request();
+                Exam_FreeRooms_FROM_TO searchRequest = new Exam_FreeRooms_FROM_TO();
                 searchRequest.BeginRentalDate = SelectedDateFrom.Date;
                 searchRequest.EndRentalDate = SelectedDateTo.Date;
 

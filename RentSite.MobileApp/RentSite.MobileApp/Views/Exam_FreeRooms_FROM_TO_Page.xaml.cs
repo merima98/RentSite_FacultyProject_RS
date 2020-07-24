@@ -10,16 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace RentSite.MobileApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Ispit_SlobodneSobe_OD_DO_Page : ContentPage
+    public partial class Exam_FreeRooms_FROM_TO_Page : ContentPage
     {
-        public Ispit_SlobodneSobe_OD_DO_Page()
+        public Exam_FreeRooms_FROM_TO_Page()
         {
             InitializeComponent();
         }
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as Model.Room;
-            await Navigation.PushAsync(new Ispit_RentaniSobeKorisnici_OD_DO_DETALJI_Page(item));
+            await Navigation.PushAsync(new Exam_RentedRooms_UsersDetails_Page(item));
         }
 
          

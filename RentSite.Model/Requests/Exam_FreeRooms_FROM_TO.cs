@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RentSite.Model.Requests
 {
-    public class Ispit_SlobodneSobe_OD_DO_Request
+    public class Exam_FreeRooms_FROM_TO
     {
         public DateTime? BeginRentalDate { get; set; }
         public DateTime? EndRentalDate { get; set; }

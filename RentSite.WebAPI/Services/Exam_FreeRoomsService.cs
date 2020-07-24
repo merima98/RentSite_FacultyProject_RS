@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace RentSite.WebAPI.Services
 {
-    public class Ispit_SlobodneSobe_OD_DO_Service : BaseService<Model.Room, Ispit_SlobodneSobe_OD_DO_Request, Database.Room>
+    public class Exam_FreeRoomsService : BaseService<Model.Room, Exam_FreeRooms_FROM_TO, Database.Room>
     {
-        public Ispit_SlobodneSobe_OD_DO_Service(RentSiteContext rentSiteContext, IMapper mapper) : base(rentSiteContext, mapper)
+        public Exam_FreeRoomsService(RentSiteContext rentSiteContext, IMapper mapper) : base(rentSiteContext, mapper)
         {
         }
 
 
-        public override List<Model.Room> GetAll(Ispit_SlobodneSobe_OD_DO_Request search)
+        public override List<Model.Room> GetAll(Exam_FreeRooms_FROM_TO search)
         {
             var roomsList = _rentSiteContext.Room.ToList();
 

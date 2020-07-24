@@ -26,7 +26,7 @@ namespace RentSite.MobileApp.Views
                 new HomeMenuItem {Id = MenuItemType.Apartments, Title="Apartments" },
                 new HomeMenuItem {Id = MenuItemType.RentedRooms, Title="Rented rooms" },
                 new HomeMenuItem {Id = MenuItemType.RentedApartments, Title="Rented apartments" },
-                new HomeMenuItem {Id = MenuItemType.Ispit, Title="Slobodno" }
+                new HomeMenuItem {Id = MenuItemType.ExamTask, Title="Rooms available for slected date" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

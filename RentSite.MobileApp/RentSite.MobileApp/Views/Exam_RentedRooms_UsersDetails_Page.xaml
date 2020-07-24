@@ -4,9 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewModels="clr-namespace:RentSite.MobileApp.ViewModels" xmlns:converters="clr-namespace:RentSite.MobileApp.Converters"
              mc:Ignorable="d"
-             x:Class="RentSite.MobileApp.Views.Ispit_RentaniSobeKorisnici_OD_DO_DETALJI_Page">
+             x:Class="RentSite.MobileApp.Views.Exam_RentedRooms_UsersDetails_Page">
     <ContentPage.BindingContext>
-        <viewModels:Ispit_RentaniSobeKorisnici_OD_DO_DETALJI_ViewModel/>
+        <viewModels:Exam_RentedRoomsUsers_DetailsViewModel/>
     </ContentPage.BindingContext>
 
 
